@@ -7,9 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -35,6 +33,42 @@ public class BasicItemController {
         model.addAttribute("item" ,item);
         return "basic/item";
     }
+    @GetMapping("/add")
+    public String addForm(){
+        return "basic/addForm";
+    }
+
+    //@PostMapping("/add")
+    public String save(@RequestParam("itemName") String itemName,
+                       @RequestParam("price") Integer price,
+                       @RequestParam("quantity") Integer quantity,
+                       Model model){
+        Item item = new Item();
+        item.setItemName(itemName);
+        item.setPrice(price);
+        item.setQuantity(quantity);
+
+        itemRepository.save(item);
+        model.addAttribute("item" , item);
+        return "basic/item";
+    }
+
+    //@PostMapping("/add")
+    public String addItemV2(@ModelAttribute("item") Item item,
+                       Model model){
+        itemRepository.save(item);
+       // model.addAttribute("item" , item); 자동 추가되서 생략 가능
+        return "basic/item";
+    }
+
+    @PostMapping("/add")
+    public String addItemV3(@ModelAttribute Item item,
+                            Model model){
+        itemRepository.save(item);
+        // model.addAttribute("item" , item); 자동 추가되서 생략 가능
+        return "basic/item";
+    }
+
 
     /*테스트 용*/
     @PostConstruct
