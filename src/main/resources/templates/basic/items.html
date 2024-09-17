@@ -4,18 +4,19 @@
     <meta charset="utf-8">
     <link   th:href="@{/css/bootstrap.min.css}"
             href="../css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
 <div class="container" style="max-width: 600px">
     <div class="py-5 text-center">
-        <h2>상품목록</h2>
+        <h2>商品目録</h2>
     </div>
     <div class="row">
         <div class="col">
             <button class="btn btn-primary float-end"
                     onclick="location.href='addForm.html'"
                     th:onclick="|location.href='@{/basic/items/add}'|"
-                    type="button">상품등록</button>
+                    type="button">商品登録</button>
         </div>
     </div>
     <hr class="my-4">
@@ -24,9 +25,9 @@
             <thead>
             <tr>
                 <th>ID</th>
-                <th>상품명</th>
-                <th>가격</th>
-                <th>수량</th>
+                <th>商品名</th>
+                <th>値段</th>
+                <th>数量</th>
             </tr>
             </thead>
             <tbody>
@@ -42,4 +43,3 @@
 </div> <!-- /container -->
 </body>
 </html>
-```

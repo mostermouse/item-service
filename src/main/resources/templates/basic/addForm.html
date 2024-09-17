@@ -13,35 +13,35 @@
 <body>
 <div class="container">
     <div class="py-5 text-center">
-        <h2>상품 등록 폼</h2>
+        <h2>商品登録　FORM</h2>
     </div>
-    <h4 class="mb-3">상품입력</h4>
+    <h4 class="mb-3">商品入力</h4>
     <form action="item.html" th:action="@{/basic/items/add}" method="post">
         <div>
-            <label for="itemName">상품명</label>
+            <label for="itemName">商品名</label>
             <input type="text" id="itemName" name="itemName" class="form-control"
-                   placeholder="상품명 입력하시오.">
+                   placeholder="商品を入力してください。">
         </div>
         <div>
-            <label for="price">가격</label>
+            <label for="price">値段</label>
             <input type="text" id="price" name="price" class="form-control"
-                   placeholder="가격을 입력하시오.">
+                   placeholder="値段を入力してください。">
         </div>
         <div>
-            <label for="quantity">수량</label>
+            <label for="quantity">数量</label>
             <input type="text" id="quantity" name="quantity" class="form-control"
-                   placeholder="수량을 입력하시오.">
+                   placeholder="数量を入力してください。">
         </div>
         <hr class="my-4">
         <div class="row">
             <div class="col">
-                <button class="w-100 btn btn-primary btn-lg" type="submit">상품등록</button>
+                <button class="w-100 btn btn-primary btn-lg" type="submit">商品登録</button>
             </div>
             <div class="col">
                 <button class="w-100 btn btn-secondary btn-lg"
                         onclick="location.href='items.html'"
                         th:onclick="|location.href='@{/basic/items}'|"
-                        type="button">취소</button>
+                        type="button">キャンセル</button>
             </div>
         </div>
     </form>
